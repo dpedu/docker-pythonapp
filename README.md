@@ -7,7 +7,7 @@ For running uWSGI python3 apps.
 
 * build image: `docker build -t pyapp .`
 * build a python3 app. for example, in a folder called testapp
-* `testapp/app.py` is the main wsgi file. var `application` must be the wsgi app instance.
+* `testapp/app.py` is the main wsgi file. var `application` must be a wsgi callable.
 * testapp/requirements.txt is used by pip to install required modules
 * app/static will be mapped to http://server.address/static/
 * run container: `docker run -p 80:80 -v /localpath/to/appdir/:/home/python/app/ pythonapp`
