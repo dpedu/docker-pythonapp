@@ -1,0 +1,12 @@
+#!/bin/sh
+
+su python <<'EOF'
+	if [ -d /home/python/appenv ] ; then
+		exit 0
+	fi
+	cd /home/python/
+	virtualenv --python=python3.4 appenv
+	source appenv/bin/activate
+	pip install -r app/requirements.txt
+	deactivate
+EOF
